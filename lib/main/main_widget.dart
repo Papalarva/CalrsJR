@@ -1,6 +1,12 @@
+import '../blog/blog_widget.dart';
+import '../bolsa_trabajo/bolsa_trabajo_widget.dart';
+import '../compania/compania_widget.dart';
+import '../contacto/contacto_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../lonuevo/lonuevo_widget.dart';
+import '../ordenar/ordenar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -51,10 +57,20 @@ class _MainWidgetState extends State<MainWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Image.network(
-                        'https://carlsjrmx.netlify.app/assets/ordena-y-recoge-banner-2.jpg',
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                      InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => OrdenarWidget(),
+                            ),
+                          );
+                        },
+                        child: Image.network(
+                          'https://carlsjrmx.netlify.app/assets/ordena-y-recoge-banner-2.jpg',
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
@@ -268,8 +284,13 @@ class _MainWidgetState extends State<MainWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LonuevoWidget(),
+                                  ),
+                                );
                               },
                               text: 'VER MÁS',
                               icon: FaIcon(
@@ -450,8 +471,13 @@ class _MainWidgetState extends State<MainWidget> {
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                             child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BlogWidget(),
+                                  ),
+                                );
                               },
                               text: 'VER MÁS',
                               icon: FaIcon(
@@ -481,6 +507,55 @@ class _MainWidgetState extends State<MainWidget> {
                           ),
                         ],
                       ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ContactoWidget(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                'CONTACTO',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFFFCB05),
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BolsaTrabajoWidget(),
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                'BOLSA DE TRABAJO',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFFFFCB05),
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -501,14 +576,24 @@ class _MainWidgetState extends State<MainWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'INFORMACIÓN DE \nLA CONMPAÑIA',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                  ),
+                        InkWell(
+                          onTap: () async {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CompaniaWidget(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'INFORMACIÓN DE \nLA CONMPAÑIA',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                          ),
                         ),
                         Container(
                           width: 180,
