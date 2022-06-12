@@ -1,2 +1,5 @@
 // Export pages
-export 'home_page/home_page_widget.dart' show HomePageWidget;
+export 'main/main_widget.dart' show MainWidget;
+export 'ordenar/ordenar_widget.dart' show OrdenarWidget;
+export 'lonuevo/lonuevo_widget.dart' show LonuevoWidget;
+export 'blog/blog_widget.dart' show BlogWidget;
